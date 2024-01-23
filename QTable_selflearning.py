@@ -32,7 +32,6 @@ def main():
             reward = take_action[1]
             done = take_action[1]
             
-            qtable[state, action] = ...
 
     
     done = False
@@ -42,7 +41,6 @@ def main():
     rewards = 0
 
     while not done:
-        action = env.action_space(qtable[state: ,])
         take_action = env.step(action)
         state = take_action[0]
         reward = take_action[1]
