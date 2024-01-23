@@ -14,9 +14,6 @@ def main():
     # The agent tries trial and error until explore becomes less than random.uniform(0,1) in order to take the action or to determine what to do.
     explore = 1.0
 
-    # The agent will begin to exploit or move based on the data from the qtable rather than moving by guessing.
-    # The explore value is minimized based on the explore_changer. This will increase performance and minimize or decrease the penality.
-
     explore_changer = 0.005
 
     for training in training_epoch():
