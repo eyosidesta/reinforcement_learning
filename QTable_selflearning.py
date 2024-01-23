@@ -10,10 +10,9 @@ def main():
 
     explore = 1.0
 
-
-    for training in training_epoch():
+    for _ in training_epoch():
         state = env.reset()
-        for steps in max_each_epoch_step():
+        for _ in max_each_epoch_step():
             if explore > 0.5:
                 action = env.action_space.sample()
             else:
