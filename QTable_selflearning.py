@@ -7,10 +7,8 @@ def main():
     training_epoch = 1000
     max_each_epoch_step = 100
 
-    space = env.observation_space.n
     action = env.action_space.n
 
-    q_learning_rate = 0.9
     # The agent tries trial and error until explore becomes less than random.uniform(0,1) in order to take the action or to determine what to do.
     explore = 1.0
 
