@@ -44,10 +44,10 @@ class TrainedAgent:
                     action = np.argmax(qtable[actual_state,:])
 
                 # take action and observe reward
-                action_taken = self.env.step(action)
-                update_state = action_taken[0]
-                reward = action_taken[1]
-                done = action_taken[2]
+                take_action = self.env.step(action)
+                update_state = take_action[0]
+                reward = take_action[1]
+                done = take_action[2]
                 print(f"state: {state}, action: {action}, update_state: {update_state}")
                 actual_state = state[0] if isinstance(state, tuple) else state
                 qtable[actual_state, action] = qtable[actual_state, action] + qlearning_rate * (reward + discount_rate * np.max(qtable[update_state]) - qtable[actual_state, action])
@@ -75,10 +75,10 @@ class TrainedAgent:
         while not done:
             actual_state = state[0] if isinstance(state, tuple) else state
             action = np.argmax(qtable[actual_state,:])
-            action_taken = self.env.step(action)
-            update_state = action_taken[0]
-            reward = action_taken[1]
-            done = action_taken[2]
+            take_action = self.env.step(action)
+            update_state = take_action[0]
+            reward = take_action[1]
+            done = take_action[2]
             
             if reward == -10:
                 penality += 1
