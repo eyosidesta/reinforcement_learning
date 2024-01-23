@@ -11,8 +11,6 @@ def main():
     # The agent tries trial and error until explore becomes less than random.uniform(0,1) in order to take the action or to determine what to do.
     explore = 1.0
 
-    explore_changer = 0.005
-
     for training in training_epoch():
         state = env.reset()
         for steps in max_each_epoch_step():
