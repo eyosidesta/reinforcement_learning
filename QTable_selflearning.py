@@ -29,8 +29,6 @@ def main():
 
             take_action = env.step(action)
             state = take_action[0]
-            reward = take_action[1]
-            done = take_action[1]
             
 
     
